@@ -1,1 +1,38 @@
-<h1>Hey!</h1>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+  <title>index</title>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular.min.js"></script>
+  <script type="text/javascript" src="js/app.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/styles.css">
+  <style type="text/css" media="screen">
+   
+
+  </style>
+</head>
+<body data-ng-app="homeCarousel">
+  <div data-ng-controller="homeCarouselController" class="carousel-wrapper">
+    <ul class="carousel-nav">
+      <li ng-repeat="image in images">
+        <a href="" ng-click="setSelected($index)">image {{$index + 1}}</a>
+      </li>
+    </ul>
+
+    <ul>
+      <li><a href="" ng-click="nextSlide()">next</a></li>
+      <li><a href="" ng-click="previousSlide()">previous</a></li>
+
+    <div class="carousel-images-wrapper">
+      <img ng-src="{{oldImage}}" class="fader">
+      <img ng-repeat="image in images" ng-show="selectedImage==$index" ng-src="{{image.image}}" class="carousel" ng-class="{active:$index == selectedImage}">
+    </div>  
+
+    <ul>
+      <p ng-repeat="image in images" ng-show="selectedImage==$index" class="carousel-caption">{{image.caption}}</p>
+    </ul>
+
+  </div>
+</body>
+</html>
