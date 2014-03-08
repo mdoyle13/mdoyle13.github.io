@@ -3,15 +3,15 @@ var homeCarousel = angular.module('homeCarousel', []);
   function homeCarouselController($scope) {
     $scope.images = [
       {
-        image: "http://flickholdr.com/500/500/sun",
+        image: "http://placehold.it/500x500&text=1",
         caption: "Caption for image 1"
       },
       {
-        image: "http://flickholdr.com/500/500/sea",
+        image: "http://placehold.it/500x500&text=2",
         caption: "Caption for image 2"
       },
       {
-        image: "http://flickholdr.com/500/500/",
+        image: "http://placehold.it/500x500&text=3",
         caption: "Caption for image 3"
       }
     ];
